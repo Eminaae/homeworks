@@ -9,8 +9,14 @@ public class Task05 {
 
 	}
 
+	/**
+	 * Recursively compute the value of base a to the b power
+	 * @param a
+	 * @param b
+	 * @return base a to the b power
+	 */
 	private static double getPower(int a, int b) {
-		  if (b < 0 & a < 0) {
+		  if (b < 0) {
 		    	return a*1/(getPower(a,1-b));
 		    }
 		    if (b == 0) {
