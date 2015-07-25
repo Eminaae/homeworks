@@ -87,6 +87,13 @@ public class PointArray {
 		undos = tmp;
 		
 	}
+	/**
+	 * Disables redo option.
+	 */
+	public void disableRedo(){
+		redos = new int[0];
+	}
+	
 
 	/**
 	 * Increases array

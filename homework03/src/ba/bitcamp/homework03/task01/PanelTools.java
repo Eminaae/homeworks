@@ -57,14 +57,10 @@ public class PanelTools extends JPanel {
 
 		@Override
 		public void actionPerformed(ActionEvent e) {
-			if (e.getSource() == pointMinus
-					&& PanelPaint.getActiveSize() > PanelPaint.MIN_SIZE) {
-				PanelPaint.setActiveSize(PanelPaint.getActiveSize()
-						- PanelPaint.STEP_SIZE);
-			} else if (e.getSource() == pointPlus
-					&& PanelPaint.getActiveSize() < PanelPaint.MAX_SIZE) {
-				PanelPaint.setActiveSize(PanelPaint.getActiveSize()
-						+ PanelPaint.STEP_SIZE);
+			if (e.getSource() == pointMinus && PanelPaint.getActiveSize() > PanelPaint.MIN_SIZE) {
+				PanelPaint.setActiveSize(PanelPaint.getActiveSize()- PanelPaint.STEP_SIZE);
+			} else if (e.getSource() == pointPlus&& PanelPaint.getActiveSize() < PanelPaint.MAX_SIZE) {
+				PanelPaint.setActiveSize(PanelPaint.getActiveSize()+ PanelPaint.STEP_SIZE);
 			} else if (e.getSource() == pen) {
 				PanelPaint.setBrush(false);
 				PanelPaint.setPen(true);
@@ -77,12 +73,9 @@ public class PanelTools extends JPanel {
 				PanelPaint.redo();
 			} else if (e.getSource() == btnText) {
 				String text = JOptionPane.showInputDialog(null, "Input text");
-				String coordinates = JOptionPane
-						.showInputDialog("Input coordinates");
-				int x = Integer.parseInt(coordinates.substring(0,
-						coordinates.indexOf(',')));
-				int y = Integer.parseInt(coordinates.substring(coordinates
-						.indexOf(',') + 1));
+				String coordinates = JOptionPane.showInputDialog("Input coordinates");
+				int x = Integer.parseInt(coordinates.substring(0,coordinates.indexOf(',')));
+				int y = Integer.parseInt(coordinates.substring(coordinates.indexOf(',') + 1));
 				PanelPaint.drawText(text, x, y);
 				JOptionPane.showMessageDialog(null, "Invalid dimensions");
 			}
